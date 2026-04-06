@@ -28,6 +28,12 @@ class RawTransaction:
 BANK_PATTERNS = {
 
     "FNB": [
+        # "FNB: R500.00 ATM withdrawal at FNB ATM SANDTON 10:15. Avail bal: R8,200.00"
+        re.compile(
+            r"FNB[:\s].*?R\s?([\d,]+\.?\d*)\s+ATM\s+withdrawal\s+at\s+(.+?)\s+(\d{1,2}:\d{2})"
+            r".*?bal[:\s]*R\s?([\d,]+\.?\d*)",
+            re.IGNORECASE
+        ),
         # "FNB: R450.00 spent at WOOLWORTHS FOOD 14:23. Avail bal: R12,340.00"
         re.compile(
             r"FNB[:\s].*?R\s?([\d,]+\.?\d*)\s+spent at\s+(.+?)\s+(\d{1,2}:\d{2})"
