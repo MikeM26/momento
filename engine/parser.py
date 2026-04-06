@@ -43,6 +43,12 @@ BANK_PATTERNS = {
     ],
 
     "Absa": [
+        # "Absa: POS Purchase R120.00 @ CHECKERS on 2026-04-06. Bal: R850.00"
+        re.compile(
+            r"Absa[:\s].*?[Pp][Oo][Ss]\s+[Pp]urchase\s+R\s?([\d,]+\.?\d*)\s+@\s+(.+?)\s+on\s+"
+            r"([\d]{4}-[\d]{2}-[\d]{2}).*?[Bb]al[:\s]*R\s?([\d,]+\.?\d*)",
+            re.IGNORECASE
+        ),
         # "ABSA: R680.00 purchased at ENGEN GARAGE on 2026/04/06 at 11:08. Balance: R8,200.00"
         re.compile(
             r"ABSA[:\s].*?R\s?([\d,]+\.?\d*)\s+purchased at\s+(.+?)\s+on\s+"
@@ -73,16 +79,22 @@ BANK_PATTERNS = {
     ],
 
     "Standard Bank": [
+        # "Standard Bank: R250.00 paid from Acc..1234 to PAYEE NAME @ 10:45. Acl bal R5,000.00"
+        re.compile(
+            r"Standard Bank[:\s].*?R\s?([\d,]+\.?\d*)\s+paid from\s+Acc\.+\d+\s+to\s+(.+?)\s+@\s+"
+            r"(\d{1,2}:\d{2}).*?bal\s+R\s?([\d,]+\.?\d*)",
+            re.IGNORECASE
+        ),
+        # "StdBank: Purchase R95.00 at NANDOS SANDTON 19:30. Available R3,100.00"
+        re.compile(
+            r"(?:Standard Bank|StdBank)[:\s].*?[Pp]urchase\s+R\s?([\d,]+\.?\d*)\s+at\s+"
+            r"(.+?)\s+(\d{1,2}:\d{2}).*?Available\s+R\s?([\d,]+\.?\d*)",
+            re.IGNORECASE
+        ),
         # "Standard Bank: R52.00 debited to acc. VIDA E CAFFE at 08:41. Bal R3,100.00"
         re.compile(
             r"Standard Bank[:\s].*?R\s?([\d,]+\.?\d*)\s+debited.*?IBAN\s+(.+?)\s+at\s+"
             r"(\d{1,2}:\d{2}).*?[Bb]al\s+R\s?([\d,]+\.?\d*)",
-            re.IGNORECASE
-        ),
-        # "StdBank: Purchase R52.00 at VIDA E CAFFE 08:41. Available R3,100.00"
-        re.compile(
-            r"(?:Standard Bank|StdBank)[:\s].*?[Pp]urchase\s+R\s?([\d,]+\.?\d*)\s+at\s+"
-            r"(.+?)\s+(\d{1,2}:\d{2}).*?Available\s+R\s?([\d,]+\.?\d*)",
             re.IGNORECASE
         ),
     ],
