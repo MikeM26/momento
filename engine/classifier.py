@@ -22,6 +22,7 @@ CATEGORY_RULES = [
         r"food\s+lover", r"fruit\s+&?\s*veg",
         r"cambridge food",
         r"boxer\s+superstore", r"boxer\s+cash",
+        r"esselen", r"pretoria\s+za",
     ]),
 
     # ── Transport & fuel ───────────────────────────────────────────────────────
