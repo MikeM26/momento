@@ -1,6 +1,0 @@
-git init
-git add .
-git commit -m "momento — engine + api"
-git branch -M main
-git remote add origin https://github.com/MikeM26/momento.git
-git push -u origin main
