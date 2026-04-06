@@ -88,6 +88,11 @@ BANK_PATTERNS = {
     ],
 
     "Capitec": [
+        # "Capitec: Cashback Purchase -R1483.24 from SAVINGS ACCOUNT; Ref Shoprite Esselen Stree PRETORIA ZA; Avail..."
+        re.compile(
+            r"Capitec[:\s].*?-?R\s?([\d,]+\.?\d*).*?[Rr]ef\s+(.+?);",
+            re.IGNORECASE
+        ),
         # "Capitec: R199.00 paid to NETFLIX. 00:00. Balance R2,840.00"
         re.compile(
             r"Capitec[:\s].*?R\s?([\d,]+\.?\d*)\s+paid to\s+(.+?)[.\s]+(\d{1,2}:\d{2})"
