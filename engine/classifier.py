@@ -116,6 +116,33 @@ CATEGORY_RULES = [
         r"udemy", r"coursera", r"skillshare",
         r"textbook", r"bookshop",
     ]),
+
+    # ── Cash & withdrawals ────────────────────────────────────────────────────
+    ("Withdrawal", [
+        r"atm\b", r"atm\s+withdrawal", r"cash\s+withdrawal",
+        r"atm\s+cash", r"cash\s+advance",
+        r"absa\s+atm", r"fnb\s+atm",
+        r"nedbank\s+atm", r"capitec\s+atm", r"standard\s+bank\s+atm",
+        r"withdrawal", r"cash\s+out", r"cash\s+at\s+till",
+    ]),
+
+    # ── Transfers & payments out ───────────────────────────────────────────────
+    ("Transfer", [
+        r"eft\b", r"instant\s+payment", r"interbank",
+        r"transferred\s+to", r"payment\s+to",
+        r"send\s+money", r"snapscan", r"zapper",
+        r"ozow", r"peach\s+payments",
+        r"bank\s+transfer", r"debit\s+order",
+    ]),
+
+    # ── Miscellaneous ──────────────────────────────────────────────────────────
+    ("Miscellaneous", [
+        r"fee\b", r"bank\s+fee", r"service\s+fee", r"monthly\s+fee",
+        r"charge\b", r"admin\s+fee", r"penalty",
+        r"interest\b", r"finance\s+charge",
+        r"foreign\s+transaction", r"currency\s+conversion",
+        r"reversal", r"refund", r"cashback",
+    ]),
 ]
 
 
